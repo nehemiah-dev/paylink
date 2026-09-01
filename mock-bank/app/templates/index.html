@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mock Bank — Personal & Business Banking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-50 text-slate-800">
+    <header class="bg-white border-b">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+          <div class="w-10 h-10 bg-indigo-600 rounded flex items-center justify-center text-white font-bold">MB</div>
+          <div>
+            <a href="/" class="text-lg font-semibold">Mock Bank</a>
+            <div class="text-xs text-gray-500">Trusted banking since 2026</div>
+          </div>
+        </div>
+
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#personal" class="hover:underline">Personal</a>
+          <a href="#business" class="hover:underline">Business</a>
+          <a href="#about" class="hover:underline">About</a>
+          <a href="{{ api_docs_url }}" class="text-indigo-600 hover:underline">API Docs</a>
+          <a href="#login" class="px-4 py-2 bg-indigo-600 text-white rounded">Log in</a>
+        </nav>
+
+        <div class="md:hidden">
+          <a href="#login" class="px-3 py-2 bg-indigo-600 text-white rounded text-sm">Log in</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-12">
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h1 class="text-4xl font-extrabold leading-tight mb-4">Banking built for people and businesses</h1>
+          <p class="text-lg text-slate-600 mb-6">Secure accounts, fast payments, and simple integrations. Open an account, manage cards, and connect via our API.</p>
+
+          <div class="flex gap-3">
+            <a href="#open-account" class="px-5 py-3 bg-indigo-600 text-white rounded shadow">Open an Account</a>
+            <a href="#contact" class="px-5 py-3 border rounded text-slate-700">Contact Sales</a>
+          </div>
+
+          <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="bg-white p-4 rounded shadow-sm">
+              <h3 class="font-semibold">Checking & Savings</h3>
+              <p class="text-sm text-slate-500">Everyday accounts with online tools and security.</p>
+            </div>
+            <div class="bg-white p-4 rounded shadow-sm">
+              <h3 class="font-semibold">Business Banking</h3>
+              <p class="text-sm text-slate-500">Scalable accounts, payroll and invoicing integrations.</p>
+            </div>
+            <div class="bg-white p-4 rounded shadow-sm">
+              <h3 class="font-semibold">Developer API</h3>
+              <p class="text-sm text-slate-500">Well-documented REST endpoints for payments and cards.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-b from-white to-slate-50 p-8 rounded-lg shadow-md">
+          <div class="text-sm text-gray-500 mb-3">Account preview</div>
+          <div class="bg-white p-6 rounded-lg shadow-inner">
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <div class="text-xs text-gray-400">Balance</div>
+                <div class="text-2xl font-semibold">$12,345.67</div>
+              </div>
+              <div class="text-right">
+                <div class="text-xs text-gray-400">Account</div>
+                <div class="font-medium">Checking •••• 1234</div>
+              </div>
+            </div>
+            <div class="mt-2">
+              <button class="w-full px-4 py-2 bg-indigo-600 text-white rounded">View Transactions</button>
+            </div>
+          </div>
+          <div class="mt-6 text-xs text-gray-500">This is a mock preview — use the API for programmatic access.</div>
+        </div>
+      </section>
+
+      <section id="about" class="mt-16">
+        <h2 class="text-2xl font-semibold mb-4">Why choose Mock Bank</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white p-4 rounded shadow-sm">
+            <h4 class="font-medium">Security</h4>
+            <p class="text-sm text-slate-500">We use modern encryption, monitoring, and multi-factor authentication.</p>
+          </div>
+          <div class="bg-white p-4 rounded shadow-sm">
+            <h4 class="font-medium">Reliability</h4>
+            <p class="text-sm text-slate-500">High availability and robust transaction simulation for testing.</p>
+          </div>
+          <div class="bg-white p-4 rounded shadow-sm">
+            <h4 class="font-medium">Developer Friendly</h4>
+            <p class="text-sm text-slate-500">Use our API Docs to integrate payments and card features quickly.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-white border-t mt-12">
+      <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="text-sm text-gray-600">© Mock Bank — This is a simulated bank for demo purposes.</div>
+        <div class="flex items-center gap-4">
+          <a href="{{ api_docs_url }}" class="text-sm text-indigo-600 hover:underline">API Docs</a>
+          <a href="#privacy" class="text-sm text-gray-600 hover:underline">Privacy</a>
+          <a href="#terms" class="text-sm text-gray-600 hover:underline">Terms</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
