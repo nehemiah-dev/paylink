@@ -15,5 +15,6 @@ class Settings(BaseSettings):
     database_host: str
     database_name: str
     database_password: SecretStr
+    debug: bool
 
 settings = Settings()
