@@ -1,7 +1,13 @@
 from contextlib import asynccontextmanager
 from typing import Annotated
 
-from database import Base, dispose_engine, engine, get_db
+try:
+    from app.database import Base, dispose_engine, engine, get_db
+    from app.routes.authorize import router as authorize_router
+except ImportError:  # pragma: no cover
+    from database import Base, dispose_engine, engine, get_db
+    from routes.authorize import router as authorize_router
+
 from fastapi import Depends, FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
@@ -25,6 +31,8 @@ app = FastAPI(
     description=("A mock banking API for payment gateway integrations"),
     docs_url="/docs"
 )
+
+app.include_router(authorize_router)
 
 templates = Jinja2Templates(directory="mock-bank/app/templates")
 
