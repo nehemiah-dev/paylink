@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import UTC, datetime
 
 from app.models import Account, AuthorizationStatus, Base
 from app.schemas.authorize import AuthorizationRequest
@@ -54,4 +54,4 @@ def test_authorize_payment_success():
         assert authorization.amount == 250
         assert authorization.card_last4 == "1111"
         assert account.reserved_cents == 250
-        assert authorization.expires_at > datetime.utcnow()
+        assert authorization.expires_at > datetime.now(UTC)
